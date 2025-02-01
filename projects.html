@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Projects - Darshan's Portfolio</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      /* General Reset */
+      body,
+      h1,
+      h2,
+      p,
+      ul,
+      li,
+      a {
+        margin: 0;
+        padding: 0;
+        text-decoration: none;
+        list-style: none;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+      }
+
+      body {
+        background-color: #f3f4f6;
+        color: #333;
+        line-height: 1.6;
+      }
+
+      /* Projects Section */
+      .projects-section {
+        padding: 100px 20px;
+        text-align: center;
+        background: #edf2f7;
+        border-radius: 12px;
+        margin: 20px auto;
+        max-width: 1200px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      .projects-section h1 {
+        font-size: 36px;
+        margin-bottom: 20px;
+        color: #2d3748;
+      }
+
+      .projects-section p {
+        font-size: 18px;
+        margin-bottom: 40px;
+        color: #4a5568;
+      }
+
+      .projects-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 20px;
+      }
+
+      .project-card {
+        background: #ffffff;
+        border-radius: 8px;
+        padding: 20px;
+        text-align: left;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .project-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+      }
+
+      .project-card h2 {
+        font-size: 24px;
+        color: #2b6cb0;
+        margin-bottom: 10px;
+      }
+
+      .project-card p {
+        font-size: 16px;
+        color: #4a5568;
+        margin-bottom: 15px;
+      }
+
+      .project-link {
+        text-decoration: none;
+        color: #2c5282;
+        font-weight: bold;
+        font-size: 14px;
+        transition: color 0.3s ease;
+      }
+
+      .project-link:hover {
+        color: #2b6cb0;
+      }
+
+      /* Footer */
+      footer {
+        background: #2d3748;
+        color: #f7fafc;
+        text-align: center;
+        padding: 10px 0;
+        margin-top: 50px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Navigation Bar -->
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        
+        <li><a href="projects.html" class="active">Projects</a></li>
+
+        <li><a href="education.html">Education</a></li>
+        <li><a href="achievements.html">Achievements</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+
+    <!-- Projects Section -->
+    <section class="projects-section">
+      <div class="container">
+        <h1>My Projects</h1>
+        <p>
+          Here are some of the exciting projects I have worked on, showcasing my
+          technical skills and problem-solving abilities.
+        </p>
+
+        <div class="projects-grid">
+          <div class="project-card">
+            <h2>Obstacle-Avoiding Robot</h2>
+            <p>
+              A mini-project designed to detect and avoid obstacles using
+              ultrasonic sensors and Arduino, ensuring autonomous navigation.
+            </p>
+            <a
+              href="https://acrobat.adobe.com/id/urn:aaid:sc:AP:2e5304da-93d7-40c9-b937-a71d475d7cc4"
+              class="project-link"
+              >View Details</a
+            >
+          </div>
+
+          <div class="project-card">
+            <h2>Portfolio Website</h2>
+            <p>
+              A fully responsive personal portfolio website built using HTML,
+              CSS, and JavaScript to showcase my skills and achievements.
+            </p>
+            <a href="#" class="project-link">View Details</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <p>&copy; 2025 Baranidharan’s Portfolio. All rights reserved.</p>
+    </footer>
+  </body>
+</html>
