@@ -3,12 +3,16 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Projects - Darshan's Portfolio</title>
+    <title>Projects - Baranidharan's Portfolio</title>
     <link rel="stylesheet" href="style.css" />
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
       rel="stylesheet"
     />
+    <script
+      src="https://kit.fontawesome.com/a076d05399.js"
+      crossorigin="anonymous"
+    ></script>
     <style>
       /* General Reset */
       body,
@@ -32,9 +36,39 @@
         line-height: 1.6;
       }
 
+      /* Navigation Bar */
+      nav {
+        background: #2d3748;
+        padding: 15px 0;
+        text-align: center;
+      }
+
+      nav ul {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+      }
+
+      nav ul li {
+        display: inline;
+      }
+
+      nav ul li a {
+        color: white;
+        font-size: 16px;
+        padding: 8px 12px;
+        border-radius: 5px;
+        transition: background 0.3s ease;
+      }
+
+      nav ul li a:hover,
+      .active {
+        background: #4a5568;
+      }
+
       /* Projects Section */
       .projects-section {
-        padding: 100px 20px;
+        padding: 80px 20px;
         text-align: center;
         background: #edf2f7;
         border-radius: 12px;
@@ -68,6 +102,7 @@
         text-align: left;
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         transition: transform 0.3s ease, box-shadow 0.3s ease;
+        position: relative;
       }
 
       .project-card:hover {
@@ -76,9 +111,16 @@
       }
 
       .project-card h2 {
-        font-size: 24px;
+        font-size: 22px;
         color: #2b6cb0;
         margin-bottom: 10px;
+        display: flex;
+        align-items: center;
+      }
+
+      .project-card h2 i {
+        margin-right: 8px;
+        color: #2c5282;
       }
 
       .project-card p {
@@ -88,15 +130,18 @@
       }
 
       .project-link {
-        text-decoration: none;
-        color: #2c5282;
+        display: inline-block;
+        padding: 8px 12px;
+        background: #2c5282;
+        color: white;
         font-weight: bold;
         font-size: 14px;
-        transition: color 0.3s ease;
+        border-radius: 5px;
+        transition: background 0.3s ease;
       }
 
       .project-link:hover {
-        color: #2b6cb0;
+        background: #2b6cb0;
       }
 
       /* Footer */
@@ -107,18 +152,54 @@
         padding: 10px 0;
         margin-top: 50px;
       }
+
+      /* Dark Mode */
+      body.dark-mode {
+        background-color: #1a202c;
+        color: #f3f4f6;
+      }
+
+      .projects-section.dark-mode {
+        background: #2d3748;
+        box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+      }
+
+      .project-card.dark-mode {
+        background: #1a202c;
+        color: white;
+        box-shadow: 0 4px 6px rgba(255, 255, 255, 0.1);
+      }
+
+      /* Dark Mode Toggle Button */
+      .toggle-btn {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        background: #0073e6;
+        color: white;
+        border: none;
+        padding: 10px 15px;
+        font-size: 14px;
+        cursor: pointer;
+        border-radius: 5px;
+        transition: background 0.3s;
+      }
+
+      .toggle-btn:hover {
+        background: #005bb5;
+      }
     </style>
   </head>
 
   <body>
+    <button class="toggle-btn" onclick="toggleDarkMode()">Toggle Light/Dark Mode</button>
+
     <!-- Navigation Bar -->
     <nav>
       <ul>
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About</a></li>
-        
         <li><a href="projects.html" class="active">Projects</a></li>
-
         <li><a href="education.html">Education</a></li>
         <li><a href="achievements.html">Achievements</a></li>
         <li><a href="contact.html">Contact</a></li>
@@ -129,31 +210,18 @@
     <section class="projects-section">
       <div class="container">
         <h1>My Projects</h1>
-        <p>
-          Here are some of the exciting projects I have worked on, showcasing my
-          technical skills and problem-solving abilities.
-        </p>
+        <p>Here are some of the exciting projects I have worked on, showcasing my technical skills.</p>
 
         <div class="projects-grid">
           <div class="project-card">
-            <h2>Obstacle-Avoiding Robot</h2>
-            <p>
-              A mini-project designed to detect and avoid obstacles using
-              ultrasonic sensors and Arduino, ensuring autonomous navigation.
-            </p>
-            <a
-              href="https://acrobat.adobe.com/id/urn:aaid:sc:AP:2e5304da-93d7-40c9-b937-a71d475d7cc4"
-              class="project-link"
-              >View Details</a
-            >
+            <h2><i class="fas fa-robot"></i> Obstacle-Avoiding Robot</h2>
+            <p>A mini-project designed to detect and avoid obstacles using ultrasonic sensors and Arduino.</p>
+            <a href="https://acrobat.adobe.com/id/urn:aaid:sc:AP:2e5304da-93d7-40c9-b937-a71d475d7cc4" class="project-link">View Details</a>
           </div>
 
           <div class="project-card">
-            <h2>Portfolio Website</h2>
-            <p>
-              A fully responsive personal portfolio website built using HTML,
-              CSS, and JavaScript to showcase my skills and achievements.
-            </p>
+            <h2><i class="fas fa-laptop-code"></i> Portfolio Website</h2>
+            <p>A fully responsive personal portfolio website built using HTML, CSS, and JavaScript.</p>
             <a href="#" class="project-link">View Details</a>
           </div>
         </div>
@@ -164,5 +232,12 @@
     <footer>
       <p>&copy; 2025 Baranidharan’s Portfolio. All rights reserved.</p>
     </footer>
+
+    <script>
+      function toggleDarkMode() {
+        document.body.classList.toggle("dark-mode");
+        document.querySelector(".projects-section").classList.toggle("dark-mode");
+      }
+    </script>
   </body>
 </html>
