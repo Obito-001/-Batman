@@ -1,61 +1,236 @@
-  <!DOCTYPE html>
-  <html lang="en">
-    <head>
-      <meta charset="UTF-8" />
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <title>Baranidharan's Portfolio</title>
-      <link rel="stylesheet" href="style.css" />
-      <style>
-        footer {
-          background: #2d3748;
-          color: #f7fafc;
-          text-align: center;
-          padding: 10px 0;
-          margin-top: 50px;
-        }
-      </style>
-    </head>
-    <body>
-      <!-- Navigation Bar -->
-      <nav>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About</a></li>
-        
-          <li><a href="projects.html">Projects</a></li>
-          <li><a href="education.html">Education</a></li>
-          <li><a href="achievements.html">Achievements</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </nav>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Baranidharan's Portfolio</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      /* General Reset */
+      body, h1, h2, p, ul, li, a {
+        margin: 0;
+        padding: 0;
+        text-decoration: none;
+        list-style: none;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+      }
 
-      <!-- Home Section -->
-      <section class="home">
-        <div class="container">
-          <div class="intro">
-            <h1>Hello, I'm Baranidharan</h1>
-            <p>
-              Welcome to my personal portfolio! I'm a passionate Electronics and
-              Communication Engineering student currently based in Coimbatore. My
-              aim is to contribute to the technological world through innovative
-              projects and problem-solving solutions.
-            </p>
-            <p>
-              Here, you can explore my journey, learn about my skills, discover
-              the projects I’ve worked on, and much more.
-            </p>
-            
-          </div>
+      body {
+        background-color: #f3f4f6;
+        color: #333;
+        line-height: 1.6;
+      }
 
-          <div class="home-image">
-            <img src="barani.jpg" alt="Baranidharan's Portfolio" />
-          </div>
+      /* Navigation Bar */
+      nav {
+        background: #2d3748;
+        padding: 15px 0;
+        text-align: center;
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 1000;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      nav.scrolled {
+        background-color: #34495e;
+      }
+
+      nav ul {
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+        list-style-type: none;
+      }
+
+      nav ul li {
+        display: inline;
+      }
+
+      nav ul li a {
+        color: white;
+        font-size: 16px;
+        padding: 10px 20px;
+        border-radius: 5px;
+        transition: background 0.3s ease;
+      }
+
+      nav ul li a:hover,
+      .active {
+        background: #4a5568;
+      }
+
+      /* Home Section */
+      .home {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        padding: 100px 20px 60px;
+        max-width: 1200px;
+        margin: auto;
+        text-align: center;
+      }
+
+      .container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+      }
+
+      .intro {
+        max-width: 600px;
+        text-align: left;
+      }
+
+      .intro h1 {
+        font-size: 36px;
+        color: #2d3748;
+        margin-bottom: 10px;
+      }
+
+      .intro p {
+        font-size: 16px;
+        color: #4a5568;
+        margin-bottom: 15px;
+      }
+
+      .cta-btn {
+        display: inline-block;
+        background: #0073e6;
+        color: white;
+        padding: 10px 20px;
+        font-size: 16px;
+        border-radius: 5px;
+        transition: background 0.3s;
+      }
+
+      .cta-btn:hover {
+        background: #005bb5;
+      }
+
+      /* Profile Image */
+      .home-image img {
+        max-width: 300px;
+        border-radius: 50%;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+
+      /* Footer */
+      footer {
+        background: #2d3748;
+        color: #f7fafc;
+        text-align: center;
+        padding: 10px 0;
+        position: fixed;
+        width: 100%;
+        bottom: 0;
+      }
+
+      /* Dark Mode */
+      body.dark-mode {
+        background-color: #1a202c;
+        color: #f3f4f6;
+      }
+
+      nav.dark-mode {
+        background: #1a202c;
+      }
+
+      .intro.dark-mode h1,
+      .intro.dark-mode p {
+        color: #f3f4f6;
+      }
+
+      /* Dark Mode Toggle Button */
+      .toggle-btn {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        background: #0073e6;
+        color: white;
+        border: none;
+        padding: 10px 15px;
+        font-size: 14px;
+        cursor: pointer;
+        border-radius: 5px;
+        transition: background 0.3s;
+      }
+
+      .toggle-btn:hover {
+        background: #005bb5;
+      }
+    </style>
+  </head>
+  <body>
+    <button class="toggle-btn" onclick="toggleDarkMode()">Toggle Light/Dark Mode</button>
+
+    <!-- Navigation Bar -->
+    <nav>
+      <ul>
+        <li><a class="active" href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="education.html">Education</a></li>
+        <li><a href="achievements.html">Achievements</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+
+    <!-- Home Section -->
+    <section class="home">
+      <div class="container">
+        <div class="intro">
+          <h1>Hello, I'm Baranidharan</h1>
+          <p>
+            Welcome to my personal portfolio! I'm a passionate Electronics and
+            Communication Engineering student currently based in Coimbatore. My
+            aim is to contribute to the technological world through innovative
+            projects and problem-solving solutions.
+          </p>
+          <p>
+            Here, you can explore my journey, learn about my skills, discover
+            the projects I’ve worked on, and much more.
+          </p>
+          <a href="projects.html" class="cta-btn">Explore My Work</a>
         </div>
-      </section>
 
-      <!-- Footer -->
-      <footer>
-        <p>&copy; 2025 Baranidharan's Portfolio. All rights reserved.</p>
-      </footer>
-    </body>
-  </html>
+        <div class="home-image">
+          <img src="barani.jpg" alt="Baranidharan's Portfolio" />
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <p>&copy; 2025 Baranidharan's Portfolio. All rights reserved.</p>
+    </footer>
+
+    <script>
+      function toggleDarkMode() {
+        document.body.classList.toggle("dark-mode");
+        document.querySelector("nav").classList.toggle("dark-mode");
+        document.querySelector(".intro").classList.toggle("dark-mode");
+
+        // Save preference in local storage
+        if (document.body.classList.contains("dark-mode")) {
+          localStorage.setItem("theme", "dark");
+        } else {
+          localStorage.setItem("theme", "light");
+        }
+      }
+
+      // Load saved theme preference
+      window.onload = function () {
+        if (localStorage.getItem("theme") === "dark") {
+          document.body.classList.add("dark-mode");
+          document.querySelector("nav").classList.add("dark-mode");
+          document.querySelector(".intro").classList.add("dark-mode");
+        }
+      };
+    </script>
+  </body>
+</html>
