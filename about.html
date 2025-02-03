@@ -5,84 +5,62 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>About - Baranidharan's Portfolio</title>
     <link rel="stylesheet" href="style.css" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet" />
     <style>
-      footer {
-        background: #2d3748;
-        color: #f7fafc;
-        text-align: center;
-        padding: 10px 0;
-        margin-top: 50px;
-      }
-    </style>
-  </head>
-
-  <body>
-    <!-- Navigation Bar -->
-    <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html" class="active">About</a></li>
-        
-        <li><a href="projects.html">Projects</a></li>
-        <li><a href="education.html">Education</a></li>
-        <li><a href="achievements.html">Achievements</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </nav>
-
-    <!-- About Section -->
-    <section class="about-section">
-      <div class="container">
-        <h1>About Me</h1>
-        <p>
-          Hi, I’m Baranidharan, a passionate Electronics and Communication
-          Engineering student at Sri Krishna College of Technology, Coimbatore.
-          My journey is fueled by a deep curiosity for innovation and
-          problem-solving in the tech world. I’m self-motivated, disciplined,
-          and always eager to learn and grow.
-        </p>
-
-        <div class="about-cards">
-          <div class="about-card">
-            <h2>Education</h2>
-            <p>
-              Currently pursuing a degree in Electronics and Communication
-              Engineering,Intrested in Core.
-            </p>
-          </div>
-          <div class="about-card">
-            <h2>Hobbies</h2>
-            <p>
-              Listening to music, particularly melodies, and staying active
-              through sports like handball.
-            </p>
-          </div>
-          <div class="about-card">
-            <h2>Goals</h2>
-            <p>
-              My short-term goal is to secure a role in a reputable company, and
-              my long-term ambition is to achieve a high-ranking position while
-              contributing significantly to organizational growth.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-      <p>&copy; 2025 M Baranidharan ’s Portfolio. All rights reserved.</p>
-    </footer>
-
-    <style>
-      /* About Page Specific Styling */
-      .about-section {
-        padding: 100px 20px;
+      /* General Page Styling */
+      body {
+        font-family: "Poppins", sans-serif;
         background: #f4f4f9;
+        color: #333;
+        margin: 0;
+        transition: background 0.3s, color 0.3s;
+      }
+
+      /* Dark Mode Styles */
+      body.dark-mode {
+        background: #1a1a1a;
+        color: #f9f9f9;
+      }
+
+      /* Navigation Bar */
+      nav {
+        background: #2d3748;
+        padding: 15px 0;
+        text-align: center;
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 1000;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      nav ul {
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+        list-style-type: none;
+      }
+
+      nav ul li {
+        display: inline;
+      }
+
+      nav ul li a {
+        color: white;
+        font-size: 16px;
+        padding: 10px 20px;
+        border-radius: 5px;
+        transition: background 0.3s ease;
+      }
+
+      nav ul li a:hover,
+      .active {
+        background: #4a5568;
+      }
+
+      /* About Section */
+      .about-section {
+        padding: 80px 20px;
         text-align: center;
       }
 
@@ -98,6 +76,7 @@
         color: #555;
       }
 
+      /* About Cards */
       .about-cards {
         display: flex;
         justify-content: center;
@@ -130,6 +109,116 @@
         font-size: 16px;
         color: #333;
       }
+
+      /* Footer */
+      footer {
+        background: #2d3748;
+        color: #f7fafc;
+        text-align: center;
+        padding: 10px 0;
+        margin-top: 50px;
+      }
+
+      /* Dark Mode Button */
+      .toggle-btn {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        background: #0073e6;
+        color: white;
+        border: none;
+        padding: 10px 15px;
+        font-size: 14px;
+        cursor: pointer;
+        border-radius: 5px;
+        transition: background 0.3s;
+      }
+
+      .toggle-btn:hover {
+        background: #005bb5;
+      }
     </style>
+  </head>
+
+  <body>
+    <button class="toggle-btn" onclick="toggleDarkMode()">Toggle Light/Dark Mode</button>
+
+    <!-- Navigation Bar -->
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html" class="active">About</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="education.html">Education</a></li>
+        <li><a href="achievements.html">Achievements</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+
+    <!-- About Section -->
+    <section class="about-section">
+      <h1>Hello, I'm Baranidharan</h1>
+      <p>
+        Welcome to my personal portfolio! I'm a passionate Electronics and
+        Communication Engineering student currently based in Coimbatore. My
+        aim is to contribute to the technological world through innovative
+        projects and problem-solving solutions.
+      </p>
+      <p>
+        Here, you can explore my journey, learn about my skills, discover
+        the projects I’ve worked on, and much more.
+      </p>
+
+      <div class="about-cards">
+        <div class="about-card">
+          <h2>Education</h2>
+          <p>
+            Currently pursuing a degree in Electronics and Communication
+            Engineering, Interested in Core Electronics and Communication.
+          </p>
+        </div>
+        <div class="about-card">
+          <h2>Hobbies</h2>
+          <p>
+            Listening to music, particularly melodies, and staying active
+            through sports like handball.
+          </p>
+        </div>
+        <div class="about-card">
+          <h2>Goals</h2>
+          <p>
+            My short-term goal is to secure a role in a reputable company, and
+            my long-term ambition is to achieve a high-ranking position while
+            contributing significantly to organizational growth.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <p>&copy; 2025 Baranidharan’s Portfolio. All rights reserved.</p>
+    </footer>
+
+    <!-- JavaScript for Dark Mode -->
+    <script>
+      function toggleDarkMode() {
+        document.body.classList.toggle("dark-mode");
+
+        // Save theme preference
+        if (document.body.classList.contains("dark-mode")) {
+          localStorage.setItem("theme", "dark");
+        } else {
+          localStorage.setItem("theme", "light");
+        }
+      }
+
+      // Load saved theme preference
+      window.onload = function () {
+        if (localStorage.getItem("theme") === "dark") {
+          document.body.classList.add("dark-mode");
+        }
+      };
+    </script>
   </body>
 </html>
