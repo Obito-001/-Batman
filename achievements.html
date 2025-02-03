@@ -3,76 +3,111 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Achievements</title>
+    <title>Achievements - Baranidharan's Portfolio</title>
     <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet" />
     <style>
-      /* General Reset */
-      body, h1, h2, p, ul, li, a {
-        margin: 0;
-        padding: 0;
-        text-decoration: none;
-        list-style: none;
-        box-sizing: border-box;
+      /* General Page Styling */
+      body {
         font-family: "Poppins", sans-serif;
+        background: #f4f4f9;
+        color: #333;
+        margin: 0;
+        transition: background 0.3s, color 0.3s;
       }
 
-      body {
-        background-color: #f3f4f6;
-        color: #333;
-        line-height: 1.6;
+      /* Dark Mode Styles */
+      body.dark-mode {
+        background: #1a1a1a;
+        color: #f9f9f9;
+      }
+
+      /* Navigation Bar */
+      nav {
+        background: #2d3748;
+        padding: 15px 0;
+        text-align: center;
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 1000;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      nav ul {
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+        list-style-type: none;
+      }
+
+      nav ul li {
+        display: inline;
+      }
+
+      nav ul li a {
+        color: white;
+        font-size: 16px;
+        padding: 10px 20px;
+        border-radius: 5px;
+        transition: background 0.3s ease;
+      }
+
+      nav ul li a:hover,
+      .active {
+        background: #4a5568;
       }
 
       /* Achievements Section */
-      .achievements-container {
-        padding: 60px 20px;
-        max-width: 1200px;
-        margin: auto;
+      .achievements-section {
+        padding: 80px 20px;
         text-align: center;
-        background: #edf2f7;
-        border-radius: 12px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
       }
 
-      .achievements-container h1 {
+      .achievements-section h1 {
         font-size: 36px;
-        color: #2d3748;
         margin-bottom: 20px;
+        color: #6a11cb;
       }
 
-      /* Grid Layout */
-      .achievements-grid {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
+      .achievements-section p {
+        font-size: 18px;
+        margin-bottom: 40px;
+        color: #555;
+      }
+
+      /* Achievements List */
+      .achievements-list {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
         gap: 20px;
-        max-width: 1000px;
-        margin: auto;
       }
 
-      /* Card Design */
       .achievement-card {
-        background: #ffffff;
-        padding: 20px;
-        border-radius: 8px;
+        background: #fff;
+        border-radius: 10px;
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        width: 300px;
+        padding: 20px;
         text-align: left;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
       }
 
       .achievement-card:hover {
-        transform: scale(1.05);
+        transform: translateY(-10px);
         box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
-        background: #e2e8f0;
       }
 
       .achievement-card h2 {
         font-size: 24px;
-        color: #2b6cb0;
+        color: #2575fc;
         margin-bottom: 10px;
       }
 
-      .achievement-card p, .achievement-card ul {
+      .achievement-card p {
         font-size: 16px;
-        color: #4a5568;
+        color: #333;
       }
 
       /* Footer */
@@ -83,62 +118,96 @@
         padding: 10px 0;
         margin-top: 50px;
       }
+
+      /* Dark Mode Button */
+      .toggle-btn {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        background: #0073e6;
+        color: white;
+        border: none;
+        padding: 10px 15px;
+        font-size: 14px;
+        cursor: pointer;
+        border-radius: 5px;
+        transition: background 0.3s;
+      }
+
+      .toggle-btn:hover {
+        background: #005bb5;
+      }
     </style>
   </head>
+
   <body>
+    <button class="toggle-btn" onclick="toggleDarkMode()">Toggle Light/Dark Mode</button>
+
+    <!-- Navigation Bar -->
     <nav>
       <ul>
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="projects.html">Projects</a></li>
         <li><a href="education.html">Education</a></li>
-        <li><a class="active" href="achievements.html">Achievements</a></li>
+        <li><a href="achievements.html" class="active">Achievements</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
     </nav>
 
-    <section class="achievements-container">
-      <h1>Achievements</h1>
-      <div class="achievements-grid">
-        <div class="achievement-card">
-          <h2>Academic Achievements</h2>
-          <ul>
-            <li>Completed two NPTEL exams:</li>
-            <li>Soft Skills and Personality Development</li>
-            <li>Effective Writing</li>
-            <li>Completed several Coursera courses. <a href="https://drive.google.com/drive/folders/1zNV9y6SgCBDYTCH4wnpln7uPthiV1rBS">Link</a></li>
-          </ul>
-        </div>
+    <!-- Achievements Section -->
+    <section class="achievements-section">
+      <h1>My Achievements</h1>
+      <p>
+        Here are some of the achievements that I have gained through my journey so far:
+      </p>
 
+      <div class="achievements-list">
         <div class="achievement-card">
-          <h2>Technical Projects</h2>
-          <ul>
-            <li>Built an obstacle-avoiding robot as a mini-project.</li>
-            <li>Attended multiple technical workshops.</li>
-          </ul>
+          <h2>Top Performer</h2>
+          <p>
+            Awarded as the top performer in the university for academic excellence and project contributions.
+          </p>
         </div>
-
         <div class="achievement-card">
-          <h2>Sports Achievements</h2>
-          <ul>
-            <li>Won 2nd place in a zonal-level Volleyball match during college.</li>
-          </ul>
+          <h2>Hackathon Winner</h2>
+          <p>
+            Won first place in a national level hackathon organized by XYZ Technologies for creating an innovative solution.
+          </p>
         </div>
-
         <div class="achievement-card">
-          <h2>Personal Strengths</h2>
-          <ul>
-            <li>Self-motivated</li>
-            <li>Disciplined</li>
-            <li>Active-minded</li>
-            <li>Positive Attitude</li>
-          </ul>
+          <h2>Volunteer of the Year</h2>
+          <p>
+            Recognized for outstanding contributions to community events and helping organize tech workshops.
+          </p>
         </div>
       </div>
     </section>
 
+    <!-- Footer -->
     <footer>
-      <p>&copy; 2025 Baranidharan's Portfolio. All Rights Reserved.</p>
+      <p>&copy; 2025 Baranidharan's Portfolio. All rights reserved.</p>
     </footer>
+
+    <!-- JavaScript for Dark Mode -->
+    <script>
+      function toggleDarkMode() {
+        document.body.classList.toggle("dark-mode");
+
+        // Save theme preference
+        if (document.body.classList.contains("dark-mode")) {
+          localStorage.setItem("theme", "dark");
+        } else {
+          localStorage.setItem("theme", "light");
+        }
+      }
+
+      // Load saved theme preference
+      window.onload = function () {
+        if (localStorage.getItem("theme") === "dark") {
+          document.body.classList.add("dark-mode");
+        }
+      };
+    </script>
   </body>
 </html>
